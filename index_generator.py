@@ -30,12 +30,13 @@ html = """
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="#">Últimas noticias</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+        <!--
           <li class="nav-item active">
             <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
@@ -50,6 +51,7 @@ html = """
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
+          -->
         </ul>
       </div>
     </div>
@@ -63,9 +65,6 @@ html = """
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        <h1 class="my-4">Últimas noticias
-        </h1>
-
         <!-- Blog Post -->
         """+bot_noticias.lista+"""
 
@@ -74,7 +73,8 @@ html = """
       <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
 
-        <!-- Categories Widget -->
+        <!-- Categories Widget
+
         <div class="card my-4">
           <h5 class="card-header">Categories</h5>
           <div class="card-body">
@@ -108,12 +108,13 @@ html = """
             </div>
           </div>
         </div>
-
+-->
         <!-- Side Widget -->
         <div class="card my-4">
           <h5 class="card-header">¿Qué es esto?</h5>
           <div class="card-body">
             Esto es un pequeño experimento en Python que recoge los titulares más importantes de las noticias en México.
+            Actualizado por última vez el:"""+str(datetime.datetime.now())+"""
           </div>
         </div>
 
