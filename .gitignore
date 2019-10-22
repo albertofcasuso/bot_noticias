@@ -2,3 +2,4 @@ secret.py
 __pycache__
 index.html
 exclude-list.txt
+rasp_sincro.sh
