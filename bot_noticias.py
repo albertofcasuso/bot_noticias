@@ -10,23 +10,34 @@ top_headlines = newsapi.get_top_headlines(country='mx')
 lista = ""
 separador = ' - '
 separador_el_universal = ' | '
+lista_de_excluidos = ['mediotiempo.com']
 articulos = top_headlines['articles']
+
+
 for articulo in articulos:
     if separador_el_universal in articulo['title']:
         titulo = articulo['title'].split(separador_el_universal, 1)[0]
     else:
         titulo = articulo['title'].split(separador, 1)[0]
 
-    lista += """
-    <div class="card mb-4">
-      <img class="card-img-top" src='"""+str(articulo['urlToImage'])+"""' alt="Card image cap">
-      <div class="card-body">
-        <h2 class="card-title">"""+titulo+"""</h2>
-        <p class="card-text"></p>
-        <a href='"""+str(articulo['url'])+"""' class="btn btn-primary" target="_blank" and rel="noopener noreferrer">Leer más &rarr;</a>
-      </div>
-      <div class="card-footer text-muted">
-        """+str(articulo['source']['name'])+"""
-      </div>
-    </div>
-    """
+    if articulo['urlToImage']:
+        url_imagen = articulo['urlToImage']
+    else:
+        url_imagen = '#'
+
+    if articulo['source']['name'].lower() in lista_de_excluidos:
+        pass
+    else:
+        lista += """
+        <div class="card mb-4">
+          <img class="card-img-top" src='"""+str(articulo['urlToImage'])+"""' alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">"""+titulo+"""</h2>
+            <p class="card-text"></p>
+            <a href='"""+str(articulo['url'])+"""' class="btn btn-primary" target="_blank" and rel="noopener noreferrer">Leer más &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            """+str(articulo['source']['name'])+"""
+          </div>
+        </div>
+        """
