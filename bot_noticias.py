@@ -9,7 +9,7 @@ top_headlines = newsapi.get_top_headlines(country='mx')
 
 lista = ""
 separadores = [' - ', ' | ']
-lista_de_excluidos = ['mediotiempo.com', 'quien.com', 'lasestrellas.tv']
+lista_de_excluidos = ['mediotiempo.com', 'quien.com', 'lasestrellas.tv', 'espn.com.mx']
 
 articulos = top_headlines['articles']
 
